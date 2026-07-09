@@ -281,7 +281,7 @@ Supplementary Material を使うべき場面：
 
 **リファレンスの品質チェック（audit項目08〜11に対応）**：□ 入り切らない文献は Supplementary へ切り出し本文から参照　□ 約7割が2020年以降（※箱テンプレ骨格では適用外）　□ arXiv は preprint と明記（AI/MLは可）　□ 引用形式（AMA/APA）が投稿先と一致
 
-## 3.8 アブストラクトと1章の「7文法」── 閉世界を作る（浦木メソッド）
+## 3.8 アブストラクトと1章の「7文法」── 閉世界を作る（浦木麻子 准教授 考案）
 
 | 文 | 内容 |
 |---|---|
@@ -483,7 +483,7 @@ Supplementary Material を使うべき場面：
 | B Abstract（05–07） | 05 Working Abstract の痕跡／06 Final は本文完成後に書き直し／07 Abstract＋図表だけで骨格が伝わる |
 | C 参考文献（08–11） | 08 Supplementary への切り出し／09 7割・2020年以降（箱テンプレはN/A）／10 arXiv は preprint 明記（AI/ML可）／11 引用形式が投稿先と一致 |
 | D 各章の役割（12–17） | 12 I：ギャップと貢献の明示／13 L：論点ごとの整理／14 M：再現可能なレベル／15 R：解釈を混ぜない（箱はN/A）／16 D：比較・限界・含意／17 Conclusionの置き方を意識的に選択 |
-| **E 閉世界の論理（18・7文法／浦木・v2新設）** | Abstract と Introduction 前半で、①人間なら〜する → ②システム上で未実現 → ③重要課題 → ④提案、の前半4文が順序どおり読み取れるか。世界観が広がりすぎていないか。順序乱れ・一部欠落は⚠️（挿入案を添付） |
+| **E 閉世界の論理（18・7文法／浦木麻子准教授・v2新設）** | Abstract と Introduction 前半で、①人間なら〜する → ②システム上で未実現 → ③重要課題 → ④提案、の前半4文が順序どおり読み取れるか。世界観が広がりすぎていないか。順序乱れ・一部欠落は⚠️（挿入案を添付） |
 
 判定：✅ ❌ ⚠️ N/A（根拠引用必須）。総合評価：合格／要修正／要大幅修正。❌3件以上 or HIGH指摘 で review へ移行提案。
 
@@ -512,7 +512,7 @@ Supplementary Material を使うべき場面：
 | research-starter ＋ research_start_template v0 | ⚙️＋📄 | はじめの一歩の伴走・進捗管理 | v0が無くても会話で起動。Phase順を機械化 |
 | research-proposer ＋ proposal_template v0 | ⚙️＋📄 | プロジェクト・共同研究の立ち上げ | 旧 research-project-plan を置換（旧は削除） |
 | paper-compiler v2 ＋ paper_template v0 | ⚙️＋📄 | 執筆・改稿・投稿前監査のすべて | write/review/audit。旧 paper-review-imrad を吸収（旧は削除） |
-| └ references（compiler v2 内蔵・-er名） | 内蔵 | blueprint-designer / composer / composition-checker / auditor / evaluation-planner | 浦木メソッド（7文法・箱テンプレ）を収録 |
+| └ references（compiler v2 内蔵・-er名） | 内蔵 | blueprint-designer / composer / composition-checker / auditor / evaluation-planner | 浦木麻子准教授の7文法・箱テンプレを収録 |
 | literature-researcher | ⚙️ Skill | 研究開始時の虎の巻づくり（探索担当） | starter Phase04 から呼び出し。トップ研究者・地図・世界線・候補文献 |
 | literature-reviewer | ⚙️ Skill | 文献の検証・平易な概要・URL確認（検証担当） | researcher から引き継ぎ／compiler・proposer が呼び出し。⚠️＝出典不明 |
 
