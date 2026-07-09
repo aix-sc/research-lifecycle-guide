@@ -86,7 +86,7 @@ Dual-licensed: **skills/ and dist/ = [MIT](LICENSE)** ・ **docs/ and templates/
 ## Acknowledgments
 
 - Prof. Souichi Oka (Musashino University, Faculty of Data Science) — invaluable feedback and advice
-- The Uraki method (7-sentence abstract, hako template A/B, fill-in editor)
+- Assoc. Prof. Asako Uraki (Musashino University, Faculty of Data Science) — the 7-sentence abstract, hako template A/B, and fill-in editor
 
 ---
 

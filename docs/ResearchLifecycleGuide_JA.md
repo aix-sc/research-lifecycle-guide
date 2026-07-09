@@ -542,7 +542,10 @@ Supplementary Material を使うべき場面：
 | 04 | 論文執筆 | paper_template → compiler v2（write/review）で ❌/⚠️ を潰す。文献は researcher / reviewer が整備 |
 | 05 | 投稿前監査 | compiler v2（audit）の18項目で合否判定し、✅が揃ったら投稿する |
 
-**Acknowledgment**：岡 宗一 教授（武蔵野大学 データサイエンス学部）／ 浦木メソッド（アブスト7文法・箱テンプレA/B・流し込みエディタ）に基づく
+**Acknowledgment**
+
+- 岡 宗一 教授（武蔵野大学 データサイエンス学部）── 貴重なフィードバックとアドバイス
+- 浦木麻子 准教授（武蔵野大学 データサイエンス学部）── アブストラクト7文法・箱テンプレートA/B・流し込みエディタ
 
 Skills の取得: https://github.com/aix-sc/research-lifecycle-guide
 
