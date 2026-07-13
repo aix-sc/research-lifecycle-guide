@@ -493,7 +493,12 @@ Verdicts: ✅ ❌ ⚠️ N/A (evidence quotes required). Overall: accept / revis
 - **Reasons, questions, alternatives → comments**: anchored to the exact text. Slot-specific fulfillment questions appear in both the gap report and as comments.
 - **Missing slots only → placeholder + flag + yellow**: a `[ ]` placeholder where the slot belongs, with the fulfillment question anchored as a comment.
 - **Inline annotations forbidden**: never write notes like "[comment: …]" into the body. The history table holds summaries only.
-- **Author-name rule**: the author of every comment and tracked change is always `Yusuke Takahashi` (never "Claude" or "paper-compiler"). Validate before output with `validate.py --original`.
+- **Author-name rule (two identities)**: never "Claude" or a skill name.
+  - Default: **`Yusuke Takahashi, PhD`** (`YT`) — every comment not listed below, and *all* tracked changes.
+  - **`Asako Uraki, PhD`** (`AU`) — **only for findings rooted in the Uraki method**: ① the 7-sentence abstract / closed world (audit item 18) ② the 5-chapter hako template — fixed phrases, signature verbs, Abstract 1–6 (`paper-composer`) ③ cross-chapter consistency H-X01–18 (character-identical method name, notation, contribution-list matching) ④ the A/B decision protocol.
+  - When in doubt, use the default. Tracked changes always carry the default identity (the Uraki identity is reserved for *comments*, i.e. findings).
+  - Validate before output with `validate.py --original`.
+- **Every edited location gets a comment (mandatory on each revision)**: for **every** passage changed from vX to vX+1 (newly generated, added, rewritten, deleted), leave a Word comment explaining *what* changed and *why*. Format: `[vX update] what changed / reason: the basis (slot ID, audit item, answer to a fulfillment question)`. Fulfilled slots are marked `flag → pass` and their yellow highlighting cleared at the same time. Changes such as a method rename get synchronization comments in every affected chapter. Comments from earlier versions are never deleted. This exists so you never receive a new version whose diff you cannot follow.
 
 ---
 
