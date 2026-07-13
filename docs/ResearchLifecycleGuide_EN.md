@@ -2,7 +2,7 @@
 
 **From a researcher's first steps to paper submission — a fully self-contained, 5-skill system**
 
-v7 / 2026-07-09 / EN | AIx{} Project, Uraki-Takahashi Laboratory (Musashino University, Faculty of Data Science)
+v8 / 2026-07-13 / EN | AIx{} Project, Uraki-Takahashi Laboratory (Musashino University, Faculty of Data Science)
 
 The lifecycle: **01 First Steps → 02 Project Start → 03 Choose the Writing Format → 04 Write the Paper → 05 Pre-submission Audit**
 
@@ -575,4 +575,4 @@ Get the Skills: https://github.com/aix-sc/research-lifecycle-guide
 - Prof. Souichi Oka (Musashino University, Faculty of Data Science) — invaluable feedback and advice
 - Assoc. Prof. Asako Uraki (Musashino University, Faculty of Data Science) — the 7-sentence abstract, hako template A/B, and fill-in editor
 
-AIx{} Project, Uraki-Takahashi Laboratory (Musashino University, Faculty of Data Science) | Research Lifecycle Guide [Learning Edition] v7 / 2026-07-09 / EN
+AIx{} Project, Uraki-Takahashi Laboratory (Musashino University, Faculty of Data Science) | Research Lifecycle Guide [Learning Edition] v8 / 2026-07-13 / EN

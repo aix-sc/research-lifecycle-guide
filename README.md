@@ -8,7 +8,7 @@ A curated set of Claude Skills, a learning guide, and v0 templates. Japanese-fir
 
 **The lifecycle:** `01 First Steps → 02 Project Start → 03 Choose the Format → 04 Write the Paper → 05 Pre-submission Audit`
 
-📖 Full guide: [English](docs/ResearchLifecycleGuide_EN.md) ・ [日本語](docs/ResearchLifecycleGuide_JA.md) (Markdown) ・ Slide decks: [docs/](docs/) (`v7_JA.pptx` / `v7_EN.pptx`)
+📖 Full guide: [English](docs/ResearchLifecycleGuide_EN.md) ・ [日本語](docs/ResearchLifecycleGuide_JA.md) (Markdown) ・ Slide decks: [docs/](docs/) (`v8_JA.pptx` / `v8_EN.pptx`)
 
 ## The Skills (5 + 1)
 
@@ -81,7 +81,7 @@ Both languages live in **this single repository** — our naming convention keep
 
 ## Roadmap
 
-- [x] English slide deck (`docs/*_v7_EN.pptx`) and English templates (`templates/*_EN.md`)
+- [x] English slide deck (`docs/*_v8_EN.pptx`) and English templates (`templates/*_EN.md`)
 - [x] English guide in Markdown ([`docs/ResearchLifecycleGuide_EN.md`](docs/ResearchLifecycleGuide_EN.md))
 - [ ] English skill bodies (keeping Japanese triggers in descriptions)
 - [ ] **Firebase web app** (`app/`): enter an idea or interest and it runs the whole research lifecycle (starter → proposer → compiler). AIx standard stack: Vue / Vuetify / Firebase.

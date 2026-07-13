@@ -115,7 +115,7 @@ cp -r research-lifecycle-guide/skills/* ~/.claude/skills/
 
 ## Roadmap
 
-- [x] 英語版スライド（docs/..._v7_EN.pptx）・英語版テンプレート（`_EN.md`）
+- [x] 英語版スライド（docs/..._v8_EN.pptx）・英語版テンプレート（`_EN.md`）
 - [x] 英語版ガイドMarkdown（[ResearchLifecycleGuide_EN.md](docs/ResearchLifecycleGuide_EN.md)）
 - [ ] スキル本文の英語化（description の日本語トリガーは維持）
 - [ ] **Firebase ウェブアプリ**：アイディア・興味を入力すると research lifecycle 一式（starter → proposer → compiler）を実行するアプリ（`app/` に追加予定。AIx 標準スタック：Vue / Vuetify / Firebase）
