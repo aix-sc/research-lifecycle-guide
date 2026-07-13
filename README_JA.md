@@ -42,6 +42,13 @@ research-lifecycle-guide/
     └── proposal_template_v0_JA.md
 ```
 
+**バイナリの版管理ポリシー**：`docs/` と `templates/` の PPTX / DOCX は、系列（`{YYYYMMDD}_{名称}_v{X}_{LANG}`）ごとに**最新版のみ**を追跡します。旧版はコミットしません（履歴は Git のコミット履歴で辿れます）。新しいスライドを追加したら、コミット前に次を実行してください：
+
+```bash
+bash scripts/prune-old-binaries.sh            # 旧版を git rm（最新版のみ残す）
+bash scripts/prune-old-binaries.sh --dry-run  # 何が消えるか確認のみ
+```
+
 ## スキル一覧（5＋1）
 
 | Skill | 役割 | 主な起動フレーズ |

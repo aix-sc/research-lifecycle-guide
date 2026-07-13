@@ -463,14 +463,16 @@ Absorbs the former paper-review-imrad: drafting, revision and pre-submission aud
 
 ## 4.5 paper_template — the paper's full history in one file, 4 parts
 
-**Part 1: Initial question sheet (Q1–Q12)** — working title, type, phase, venue, skeleton, language, method name, core claim, authors, deadline, material list, version
+**Part 1: Initial question sheet (Q1–Q12)** — working title, type, phase, venue (+ rationale), skeleton, language, method name, core claim, authors, deadline, material list, version
 → **Part 2: Literature Review** — generated & updated by literature-reviewer: bibliography + plain summary + full-text URL (flag = unverified source)
-→ **Part 3: Review history table** — per version: praise / gap counts (vs. prior) / HIGH issues / fulfillment questions. Newest on top
-→ **Part 4: Paper draft area** — generated & extended slot by slot. Unfilled = flags + yellow highlight + comment
+→ **Part 3: Paper draft area** — generated & extended slot by slot. Unfilled = flags + yellow highlight + comment
+→ page break → **Part 4: Review history table (at the very end of the document)** — per version: praise / gap counts (vs. prior) / HIGH issues / fulfillment questions. Newest row on top
+
+**History always goes at the back**: the review/update history sits at the very end of the document, preceded by a page break (the body stays readable; history is an appendix). The same rule applies to research-starter and research-proposer DOCX outputs (in a proposal it follows the Literature Review).
 
 - Naming: `{YYYYMMDD}_#{VENUE}_{SHORT_TITLE}_@{FIRST_AUTHOR}_{LANG}_vX.docx` (e.g. `20260706_#EJC2027_TimeAxisSynth_@Takahashi_EN_v0.docx`)
 - Version +1 per revision; date refreshed
-- Parts 1–3 stay until submission. In the camera-ready: transfer verified references into References, delete Part 2, then sweep Parts 1 & 3 and all yellow highlights (never transfer flagged sources)
+- Parts 1, 2 and 4 stay until submission. In the camera-ready: transfer verified references into References, delete Part 2, then sweep Parts 1 & 4 and all yellow highlights (never transfer flagged sources)
 
 ## 4.6 literature-researcher / literature-reviewer — survey and verification, split
 

@@ -17,21 +17,12 @@
 | Q9 | You in one line | "the person doing X": [   ] |
 | Q10 | Version & date | v0 / 20[  ]-[  ]-[  ] |
 
-**Rules**: do the phases in order (01 license → 02 articulate → 03 show → 04 survey → 05 target → 06 write). Version +1 per update. Record progress in Part 2 (newest on top). When all phases pass, move to **paper_template_v0** and launch paper-compiler.
+**Rules**: do the phases in order (01 license → 02 articulate → 03 show → 04 survey → 05 target → 06 write). Version +1 per update. Record progress in Part 3 at the end of the document (newest row on top). When all phases pass, move to **paper_template_v0** and launch paper-compiler.
 
 ---
 (page break)
 
-## Part 2 — Update history
-
-| vX (date) | Update |
-|---|---|
-| v0 (20[ ]/[ ]/[ ]) | done: [phases/items]  updated Q5–Q7: [   ]  next action: [   ] |
-
----
-(page break)
-
-## Part 3 — Per-phase drills (Research Start Canvas)
+## Part 2 — Per-phase drills (Research Start Canvas)
 
 ### Phase 01 — ORCID: get your researcher's license
 - [ ] Register at orcid.org, record URL & iD
@@ -69,3 +60,15 @@ One-year submission plan: | when | venue | topic/type (consider short communicat
 ### Phase 06 — Writing skills → the next v0
 - [ ] Draft title & 200-char abstract  ・ [ ] Outline each IMRAD chapter  ・ [ ] Create the key figure/table
 → When done, fill page 1 of **paper_template_v0** and launch **paper-compiler**.
+
+---
+(page break)
+
+## Part 3 — Update history (at the very end of the document)
+
+| vX (date) | Update |
+|---|---|
+| v0 (20[ ]/[ ]/[ ]) | done: [phases/items]  updated Q5–Q7: [   ]  next action: [   ] |
+
+---
+(page break)

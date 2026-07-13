@@ -20,7 +20,7 @@
 | Q11 | Attached material | [ minutes, transcripts, notes, data, figures... ] |
 | Q12 | Version & date | v0 / 20[  ]-[  ]-[  ] |
 
-**Rules**: the Skill generates the draft in Part 4 (answer the fulfillment questions → recompile → version +1, refresh the date). Parts 1–3 stay until submission. In the camera-ready, transfer verified references into References, delete Part 2, then remove Parts 1 & 3 and all yellow highlights (never transfer flagged sources).
+**Rules**: the Skill generates the draft in Part 4 (answer the fulfillment questions → recompile → version +1, refresh the date). Parts 1, 2 and 4 stay until submission. In the camera-ready, transfer verified references into References, delete Part 2, then remove Parts 1 & 4 and all yellow highlights (never transfer flagged sources).
 
 ---
 (page break)
@@ -38,7 +38,14 @@
 ---
 (page break)
 
-## Part 3 — Review history
+## Part 3 — Paper draft (generated from v1 onward)
+
+[ paper-compiler generates the draft here in the chosen skeleton's slot structure; unfilled slots carry flags (yellow highlighting in DOCX) and anchored fulfillment questions. ]
+
+---
+(page break)
+
+## Part 4 — Review history (at the very end of the document)
 
 *One row per version, newest on top: praised slots / gap counts (vs. prior) / HIGH issues / key fulfillment questions. Individual edit suggestions live as Word comments & tracked changes in the draft, not here.*
 
@@ -48,7 +55,3 @@
 
 ---
 (page break)
-
-## Part 4 — Paper draft (generated from v1 onward)
-
-[ paper-compiler generates the draft here in the chosen skeleton's slot structure; unfilled slots carry flags (yellow highlighting in DOCX) and anchored fulfillment questions. ]

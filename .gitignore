@@ -1,0 +1,40 @@
+# === OS / editor ===
+.DS_Store
+Thumbs.db
+*.swp
+*~
+
+# === 作業用・一時ファイル ===
+rlg-tmp/
+ziproot/
+*.tmp
+~$*.pptx
+~$*.docx
+~$*.xlsx
+
+# === バイナリ成果物の版管理ポリシー ===
+# docs/ と templates/ に置く PPTX / DOCX は「最新版のみ」を追跡する。
+# 旧版は commit しない（履歴は Git のコミット履歴で辿る）。
+#
+# 生成物のバックアップ・重複コピーを除外：
+*_old.pptx
+*_old.docx
+*.bak
+*.orig
+*_backup.*
+*(1).pptx
+*(1).docx
+* copy.pptx
+* copy.docx
+*のコピー.pptx
+*のコピー.docx
+
+# ZIP 配布物（GitHub 上ではソースが正本のため不要）
+*.zip
+!skills/**/*.skill
+!dist/*.skill
+
+# ローカル環境
+node_modules/
+.env
+.firebase/

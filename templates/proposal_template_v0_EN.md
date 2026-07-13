@@ -62,3 +62,14 @@
 *Requirements ▸ plain words a junior-high student understands; define terms; pre-empt methodological criticism.*
 
 ### 7. Literature Review — appended here by literature-reviewer (page break)
+
+---
+(page break)
+
+## Update history (at the very end of the document; deleted in the kickoff release)
+
+*research-proposer adds one row per version at the top of the table (newest first), each with four bullets: what is done well / gap counts (vs. prior) / HIGH-priority issues / key fulfillment questions. Existing rows are never edited.*
+
+| vX (date) | Update |
+|---|---|
+| v0 (20[ ]/[ ]/[ ]) | done well: [   ]  gaps: [ ] / partial: [ ] (vs. prior)  HIGH: [   ]  questions: [   ] |

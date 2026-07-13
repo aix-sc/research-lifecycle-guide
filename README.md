@@ -28,8 +28,16 @@ A curated set of Claude Skills, a learning guide, and v0 templates. Japanese-fir
 ```
 skills/      Skill sources (readable Markdown: SKILL.md + references/ + assets/)
 dist/        Ready-to-upload .skill packages (ZIP) for claude.ai
-docs/        The full guide (Markdown, JA) + slide decks (PPTX, JA & EN)
+docs/        The full guide (Markdown, JA & EN) + slide decks (PPTX, JA & EN)
 templates/   v0 templates in Markdown (paper / research-start / proposal, JA & EN)
+scripts/     Maintenance scripts (see below)
+```
+
+**Binary versioning policy**: `docs/` and `templates/` keep **only the latest version** of each PPTX/DOCX series (`{YYYYMMDD}_{name}_v{X}_{LANG}.pptx`). Older versions are not committed — the history lives in Git. Run this before committing new decks:
+
+```bash
+bash scripts/prune-old-binaries.sh            # git rm every superseded version
+bash scripts/prune-old-binaries.sh --dry-run  # preview only
 ```
 
 ## Installation
