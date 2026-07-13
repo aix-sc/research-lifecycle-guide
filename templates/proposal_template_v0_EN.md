@@ -27,15 +27,17 @@
 
 ## Schedule overview (by date)
 
-> ***Requirements ▸** List every milestone (submission deadlines, notifications, camera-ready, presentations, go/no-go decisions) in **ascending date order**. Show only *when what happens*; ownership details belong to "Schedule and roles". **Bold the nearest go/no-go.** Undated items are TBD, placed last. Re-sort on every revision.*
+> ***Requirements ▸** List every milestone (submission deadlines, notifications, camera-ready, presentations, go/no-go decisions) in **ascending date order**. In the "Tasks" column, list what must be finished before that milestone as **one bullet per line**, each with a status marker: **✅ done / ⚠️ in progress or needs checking (add owner and the open point in brackets) / ❌ not started**. Ownership details belong to "Schedule and roles". **Bold the nearest go/no-go.** Undated items are TBD, placed last. Re-sort on every revision and flip completed tasks to ✅.*
 
-| Date | Milestone | Type | Deliverable |
-|---|---|---|---|
-| [YYYY-MM-DD] | [venue] submission deadline | Submission | Deliverable 1 |
-| [YYYY-MM-DD] | Notification | Notification | Deliverable 1 |
-| [YYYY-MM-DD] | **go/no-go: [decision]** | **Decision** | Deliverable 2 |
-| [YYYY-MM-DD] | Camera-ready | Submission | Deliverable 1 |
-| TBD | [   ] | [   ] | [   ] |
+| Date | Milestone | Type | Deliverable | Tasks (✅ done / ⚠️ in progress / ❌ not started) |
+|---|---|---|---|---|
+| [YYYY-MM-DD] | [venue] submission deadline | Submission | Deliverable 1 | ✅ [completed task]<br>⚠️ [task in progress (owner: open point)]<br>❌ [task not started]<br>❌ [task not started] |
+| [YYYY-MM-DD] | Notification | Notification | Deliverable 1 | ❌ [prepare the rebuttal strategy] |
+| [YYYY-MM-DD] | **go/no-go: [decision]** | **Decision** | Deliverable 2 | ⚠️ [aggregate pilot results]<br>❌ [agree on the decision criteria] |
+| [YYYY-MM-DD] | Camera-ready | Submission | Deliverable 1 | ❌ [   ] |
+| TBD | [   ] | [   ] | [   ] | ❌ [   ] |
+
+**Task totals**: ✅ [ ] / ⚠️ [ ] / ❌ [ ]  (check that nothing is still ❌ for the nearest milestone)
 
 ---
 
