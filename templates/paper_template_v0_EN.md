@@ -10,7 +10,7 @@
 | Q1 | Working title | [   ] |
 | Q2 | Proposal type | [ ]A Architecture (concept→N elements→main function)  [ ]B Algorithm (step pipeline)  [ ]C System/artifact  [ ]D Empirical study |
 | Q3 | Research phase | [ ]P1 Position (pilot)  [ ]P2 Implementation (qualitative eval)  [ ]P3 Proposal (quantitative/statistical)  [ ]P4 Domain application |
-| Q4 | Venue | name: [   ]  tier: [ ]domestic WS  [ ]int'l conf.  [ ]top conf./journal  [ ]EJC/IOS Press (Kiyoki lineage) |
+| Q4 | Venue | name: [   ]  tier: [ ]domestic WS  [ ]int'l conf.  [ ]top conf./journal  [ ]EJC/IOS Press (Kiyoki lineage)<br>**Rationale**: [why this venue — community fit / format fit / indexing & visibility / speed vs. permanence / de facto standard. If choosing outside IEEE/ACM, state the basis. e.g. "theory contribution → IOS Press/EJC, superior in both format and community"; "software permanence → SoftwareX: outside IEEE/ACM but the de facto standard for software publication"] |
 | Q5 | Skeleton | [ ]IMRAD (default)  [ ]5-chapter hako (Type A/B × EJC only) |
 | Q6 | Language | [ ]EN  [ ]JA  [ ]both (paired set) |
 | Q7 | Method name (proper noun) | [ capitalized proper noun; list candidates if undecided ] |

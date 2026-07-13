@@ -41,9 +41,9 @@
 ### 2. Portfolio: deliverables & author assignment
 *Requirements ▸ per deliverable: venue (deadline) / author order / its distinct contribution; anti-salami rationale (independence & cross-citations); preprint policy (priority, versioning, license).*
 
-| Deliverable | Venue (deadline) | Author order | Distinct contribution |
-|---|---|---|---|
-| [   ] | [   ] | [   ] | [   ] |
+| Deliverable | Venue (deadline) | Author order | Distinct contribution | **Rationale for the venue** |
+|---|---|---|---|---|
+| [   ] | [   ] | [   ] | [   ] | [why this venue: community fit / format / indexing / speed vs. permanence / de facto standard. State the basis when choosing outside IEEE/ACM — e.g. "theory → IOS Press/EJC (format & community both superior)"; "software permanence → SoftwareX/JOSS (outside IEEE/ACM but the de facto standard for software publication)"] |
 
 ### 3. Experiment plan & methods
 *Requirements ▸ table of experiment ID / title / summary / target deliverable / owner; metrics and the desired outcome; status (done / piloted / unplanned).*

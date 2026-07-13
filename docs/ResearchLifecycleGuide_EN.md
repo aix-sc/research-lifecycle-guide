@@ -414,6 +414,16 @@ Empty "boxes" annotated only with what belongs where; no content. Used only for 
 
 **Axis 3: venue**: domestic workshop → international conference → top conference / journal → **EJC / IOS Press (Kiyoki lineage)**. Phase × venue determines the required experiment set, metrics, sample sizes and ethics statements (handled by evaluation-planner).
 
+**Every venue needs a stated rationale** (a required column in the initial question sheet Q4 and in the proposal's portfolio table). Consider: community fit / format fit / indexing & visibility / speed vs. permanence / the field's de facto standard.
+
+**A caveat on IEEE/ACM-centrism**: do not rank venues by "IEEE/ACM = better". Depending on the nature of the contribution, a venue outside IEEE/ACM may be the right answer — say so explicitly in the rationale.
+- **Theory / conceptual models** → IOS Press / EJC can be superior in both format and community
+- **Software permanence** → SoftwareX / JOSS sit outside IEEE/ACM yet are the **de facto standard for software publication** (DOI, citability, peer-reviewed permanent archive)
+- **Speed** → arXiv (citable in AI/ML when labeled a preprint)
+- Conversely, in CV / NLP / HCI the visibility of a top conference is itself the value
+
+Examples: "Deliverable 4 (theory) → IOS Press / EJC: superior in both format and community for a theoretical contribution." "Permanence for deliverable 2 → SoftwareX: outside IEEE/ACM, but the de facto standard for software publication; DOI-based citability matches the goal." Where the choice is contested, record both sides in the rationale and reflect it in the FAQ.
+
 ## 4.2 Skeleton selection rules and the A/B decision protocol
 
 **Skeleton selection rules**
