@@ -17,9 +17,13 @@
 
 > ***Requirements ▸** Full names, institutions, roles (PI / corresponding / implementation, ...), identifiers (ORCID / e-Rad). Add one line on the rationale for author order.*
 
-| Name | Affiliation | Role | ID (ORCID / e-Rad) |
-|---|---|---|---|
-| [   ] | [   ] | [ PI / corresponding ] | [   ] |
+| Name | Affiliation | Location | Role | ORCID / e-Rad |
+|---|---|---|---|---|
+| Yusuke Takahashi | Faculty of Data Science, Asia AI Institute, Musashino University / AIx, Inc. | Tokyo, Japan | [ PI / corresponding ] | https://orcid.org/0009-0006-8351-2280 |
+| Asako Uraki | Faculty of Data Science, Asia AI Institute, Musashino University / AIx, Inc. | Tokyo, Japan | [   ] | https://orcid.org/0009-0006-8412-1804 |
+| [   ] | [   ] | [   ] | [   ] | [   ] |
+
+> *research-proposer fills in the affiliation and ORCID for Takahashi and Uraki automatically (as above). For anyone else, enter name, affiliation and ORCID.*
 
 **Author-order rationale**: [strengths fit + scholarly role]
 

@@ -27,7 +27,7 @@ v0テンプレートが無くても必ず起動する。会話から読み取れ
 
 | # | スロット | 合格条件 | 充足質問の例 |
 |---|---|---|---|
-| Q1 | 氏名・所属・学年 | 記入済み | お名前・所属・学年を教えてください |
+| Q1 | 氏名・所属・学年 | 記入済み（**Takahashi / Uraki は「既知の著者プロフィール」から所属・ORCIDを自動補完**） | お名前・所属・学年を教えてください |
 | Q2 | 研究テーマ（仮） | 1行で言語化 | いま一番気になっている現象・問題は何ですか？ |
 | P1-1 | ORCID iD 取得 | URL記載 | orcid.org で登録済みですか？（未なら今すぐ登録：3分で完了） |
 | P1-2 | プロフィール完成 | 所属・分野・学歴入力済み | ORCIDに所属機関と研究分野は入力しましたか？ |
@@ -91,6 +91,29 @@ v0テンプレートが無くても必ず起動する。会話から読み取れ
 - 前版のコメントは削除しない（履歴として残す）。
 - 著者名は必ず `Yusuke Takahashi, PhD`（`comment.py --author "Yusuke Takahashi, PhD" --initials "YT"`、変更履歴は `w:author="Yusuke Takahashi, PhD"`）とする（"Claude" やスキル名は使わない）。
 - 出力前に `validate.py --original` で検証する（tracked changes を含むため必須）。
+
+## 既知の著者プロフィール（自動挿入）
+
+以下の2名が著者・共著者・研究メンバーとして登場する場合、**ユーザーに問い合わせることなく次のプロフィールを自動で挿入する**（氏名だけが与えられた場合も同様に補完する）。表記・URLは一字一句このとおりに使う。
+
+| 氏名 | 所属 | 所在 | ORCID |
+|---|---|---|---|
+| **Yusuke Takahashi** | Faculty of Data Science, Asia AI Institute, Musashino University / AIx, Inc. | Tokyo, Japan | https://orcid.org/0009-0006-8351-2280 |
+| **Asako Uraki** | Faculty of Data Science, Asia AI Institute, Musashino University / AIx, Inc. | Tokyo, Japan | https://orcid.org/0009-0006-8412-1804 |
+
+- **日本語表記**：高橋 雄介（たかはし ゆうすけ）／浦木 麻子（うらき あさこ）。日本語論文・和文書類では「高橋 雄介」「浦木 麻子」を用い、所属は「武蔵野大学 データサイエンス学部 アジアAI研究所 / AIx, Inc.」とする。
+- **論文ドラフトの著者ブロック**（venue のテンプレートに合わせて整形。IEEE / ACM / IOS Press いずれの様式でも、氏名→所属→所在→ORCID の順序と内容は保つ）：
+
+  ```
+  Yusuke Takahashi
+  Faculty of Data Science, Asia AI Institute, Musashino University / AIx, Inc.
+  Tokyo, Japan
+  https://orcid.org/0009-0006-8351-2280
+  ```
+
+- **著者順・役割は自動で決めない**。プロフィール（所属・ORCID）だけを補完し、筆頭著者・責任著者・役割はユーザーの指定または初期質問シートの記載に従う（未指定なら ⚠️ ＋充足質問）。
+- **第三の著者・共著者が登場した場合**は、この表に無いためプロフィールを推測せず、⚠️ として氏名・所属・ORCID を質問する（でっち上げ禁止）。
+- 所属・ORCID の変更をユーザーが指示した場合は、その会話中の指示を優先する。
 
 ## DOCXの運用
 

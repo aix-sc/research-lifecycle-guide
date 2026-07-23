@@ -15,7 +15,7 @@
 | Q6 | Language | [ ]EN  [ ]JA  [ ]both (paired set) |
 | Q7 | Method name (proper noun) | [ capitalized proper noun; list candidates if undecided ] |
 | Q8 | Core claim (one sentence) | [   ] |
-| Q9 | Authors & affiliations | [ first → co-authors; ORCID/e-Rad if known ] |
+| Q9 | Authors & affiliations | [ first → co-authors ]<br>*Yusuke Takahashi / Asako Uraki are auto-filled*: Faculty of Data Science, Asia AI Institute, Musashino University / AIx, Inc., Tokyo, Japan — ORCID 0009-0006-8351-2280 / 0009-0006-8412-1804 |
 | Q10 | Deadline & page limit | [   ] |
 | Q11 | Attached material | [ minutes, transcripts, notes, data, figures... ] |
 | Q12 | Version & date | v0 / 20[  ]-[  ]-[  ] |
