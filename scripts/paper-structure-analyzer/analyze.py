@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+from __future__ import annotations
 """analyze.py — Step 4 of paper-structure-analyzer.
 
 Compare structural features across citation tiers (T1 / T10 / M / B) assigned

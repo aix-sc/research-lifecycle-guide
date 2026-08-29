@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+from __future__ import annotations
 """grobid_sections.py — optional Step 5 of paper-structure-analyzer.
 
 Extract section-heading labels from full-text PDFs via a local GROBID server

@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+from __future__ import annotations
 """author_venues.py — Step 6 of paper-structure-analyzer (v3).
 
 Author-level publication-VENUE STRATEGY analysis, stratified by citation tier.

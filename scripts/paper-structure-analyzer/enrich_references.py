@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+from __future__ import annotations
 """enrich_references.py — Step 2 of paper-structure-analyzer.
 
 Resolve every referenced work's publication year and citation count via the

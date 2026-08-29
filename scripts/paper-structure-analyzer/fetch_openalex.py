@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+from __future__ import annotations
 """fetch_openalex.py — Step 1 of paper-structure-analyzer.
 
 Fetch article metadata for a set of venues from OpenAlex (no API key needed)

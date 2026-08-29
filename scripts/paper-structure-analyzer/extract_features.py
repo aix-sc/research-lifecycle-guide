@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+from __future__ import annotations
 """extract_features.py — Step 3 of paper-structure-analyzer.
 
 Compute title and abstract structural features per paper (pure-Python, offline).
