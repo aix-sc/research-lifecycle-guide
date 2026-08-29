@@ -38,3 +38,7 @@ ziproot/
 node_modules/
 .env
 .firebase/
+
+# Python
+__pycache__/
+*.pyc

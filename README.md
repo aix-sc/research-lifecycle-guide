@@ -28,10 +28,12 @@ A curated set of Claude Skills, a learning guide, and v0 templates. Japanese-fir
 ```
 skills/      Skill sources (readable Markdown: SKILL.md + references/ + assets/)
 dist/        Ready-to-upload .skill packages (ZIP) for claude.ai
-docs/        The full guide (Markdown, JA & EN) + slide decks (PPTX, JA & EN)
+docs/        The full guide + Paper Anatomy evidence report (Markdown, JA & EN) + slide decks (PPTX, JA & EN)
 templates/   v0 templates in Markdown (paper / research-start / proposal, JA & EN)
-scripts/     Maintenance scripts (see below)
+scripts/     Maintenance scripts + paper-structure-analyzer (OpenAlex citation-tier structural analysis)
 ```
+
+**Paper Anatomy (new in v4):** [docs/PaperAnatomy_HighCitation_Patterns_EN.md](docs/PaperAnatomy_HighCitation_Patterns_EN.md) ([JA](docs/PaperAnatomy_HighCitation_Patterns_JA.md)) synthesizes large-scale bibliometric evidence on how highly cited papers differ structurally (titles, abstract moves, section labels, reference recency incl. the "70% within 5 years" rule), with a reproducible pipeline in [scripts/paper-structure-analyzer/](scripts/paper-structure-analyzer/). The findings are wired into paper-compiler as a new reference, `references/paper-anatomist.md`.
 
 **Binary versioning policy**: `docs/` and `templates/` keep **only the latest version** of each PPTX/DOCX series (`{YYYYMMDD}_{name}_v{X}_{LANG}.pptx`). Older versions are not committed — the history lives in Git. Run this before committing new decks:
 

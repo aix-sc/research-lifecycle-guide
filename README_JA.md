@@ -17,12 +17,14 @@ research-lifecycle-guide/
 ├── README.md                          ← このファイル（概要・導入手順）
 ├── docs/
 │   ├── ResearchLifecycleGuide_JA.md   ← 統合ガイド全文（Markdown）
-│   └── 20260709_Research_Lifecycle_Guide_v6_JA.pptx  ← スライド版
+│   ├── PaperAnatomy_HighCitation_Patterns_JA.md  ← 高被引用論文の構造パターン（エビデンス統合・v1）
+│   └── 20260713_Research_Lifecycle_Guide_v8_JA.pptx  ← スライド版
 ├── skills/                            ← スキルのソース（Markdown・読める形）
 │   ├── paper-compiler/                （write / review / audit の3モード）
 │   │   ├── SKILL.md
 │   │   ├── references/                （-er形式：blueprint-designer / composer /
-│   │   │                                composition-checker / auditor / evaluation-planner）
+│   │   │                                composition-checker / auditor / evaluation-planner /
+│   │   │                                anatomist〔高被引用の型・体裁エビデンス集〕）
 │   │   └── assets/paper_template_v0.docx
 │   ├── research-starter/              （はじめの一歩・6フェーズの伴走）
 │   ├── research-proposer/             （研究プロポーザルの対話コンパイル）
@@ -36,11 +38,16 @@ research-lifecycle-guide/
 │   ├── literature-researcher.skill
 │   ├── literature-reviewer.skill
 │   └── file-naming-convention.skill
-└── templates/                         ← v0テンプレート（Markdown版）
-    ├── paper_template_v0_JA.md
-    ├── research_start_template_v0_JA.md
-    └── proposal_template_v0_JA.md
+├── templates/                         ← v0テンプレート（Markdown版）
+│   ├── paper_template_v0_JA.md
+│   ├── research_start_template_v0_JA.md
+│   └── proposal_template_v0_JA.md
+└── scripts/
+    ├── prune-old-binaries.sh          ← 旧版バイナリの整理
+    └── paper-structure-analyzer/      ← 高被引用論文の層別構造分析パイプライン（OpenAlex）
 ```
+
+**Paper Anatomy（v4 で追加）**：[docs/PaperAnatomy_HighCitation_Patterns_JA.md](docs/PaperAnatomy_HighCitation_Patterns_JA.md)（[EN](docs/PaperAnatomy_HighCitation_Patterns_EN.md)）は、高被引用論文の構造的な型（タイトル・アブストのムーブ・章ラベル・参考文献の recency＝「最近5年で7割」の検証を含む）を大規模計量書誌研究から統合したエビデンスレポートです。再現パイプラインは [scripts/paper-structure-analyzer/](scripts/paper-structure-analyzer/)。知見は paper-compiler の新参照ファイル `references/paper-anatomist.md`（解剖官）としてスキルに組み込み済みです。
 
 **バイナリの版管理ポリシー**：`docs/` と `templates/` の PPTX / DOCX は、系列（`{YYYYMMDD}_{名称}_v{X}_{LANG}`）ごとに**最新版のみ**を追跡します。旧版はコミットしません（履歴は Git のコミット履歴で辿れます）。新しいスライドを追加したら、コミット前に次を実行してください：
 

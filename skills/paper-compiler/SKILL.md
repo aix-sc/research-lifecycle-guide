@@ -285,6 +285,7 @@ description: 箇条書きのアイディア・研究メモ・議事録・文字�
 | `references/paper-composition-checker.md` | **組版検査**：箱テンプレのスロットID・章間整合H-X01〜18・A/B判定プロトコル | 骨格=箱テンプレのとき必読 |
 | `references/paper-auditor.md` | **監査官**：投稿前18項目の単発合否ゲート（旧 paper-review-imrad） | auditモードで必読 |
 | `references/evaluation-planner.md` | **評価計画**：型×フェーズ×venue の実験・評価要求水準 | write/review 双方で実験・評価アドバイスを出すとき必読 |
+| `references/paper-anatomist.md` | **解剖官**：高被引用論文の型（タイトルT／アブストA／章構造S／参考文献R のエビデンス項目＋分野反転リスト） | write でタイトル・アブスト・骨格を生成するとき、および audit の体裁系指摘に根拠IDを添えるとき |
 | `assets/paper_template_v0.docx` | 論文テンプレ雛形 | 新規プロジェクト開始時にユーザーへ渡す |
 
 ## 他スキルとの連携・振り分け
