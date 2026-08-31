@@ -30,19 +30,28 @@ import urllib.request
 API = "https://api.openalex.org/works"
 BATCH = 50
 PACE = [0.4]  # seconds between API calls; adapts upward on 429
+UA = ["paper-structure-analyzer/1.1 (https://github.com/aix-sc/research-lifecycle-guide)"]
 
 
 def get(url, retries=8):
+    consecutive_429 = 0
     for i in range(retries):
         try:
-            with urllib.request.urlopen(url, timeout=60) as r:
+            req = urllib.request.Request(url, headers={"User-Agent": UA[0]})
+            with urllib.request.urlopen(req, timeout=60) as r:
                 return json.load(r)
         except urllib.error.HTTPError as e:
             if e.code == 429:
+                consecutive_429 += 1
                 ra = e.headers.get("Retry-After") if e.headers else None
-                wait = int(ra) if (ra and str(ra).isdigit()) else min(60, 10 * (i + 1))
-                PACE[0] = min(1.5, PACE[0] + 0.2)
+                server_wait = int(ra) if (ra and str(ra).isdigit()) else 0
+                # OpenAlex may send time-until-quota-reset (hours!) — never trust
+                # Retry-After beyond a hard 120s cap.
+                wait = min(120, server_wait) if server_wait else min(120, 15 * consecutive_429)
+                wait = max(wait, 10)
+                PACE[0] = min(3.0, PACE[0] + 0.4)
             else:
+                consecutive_429 = 0
                 wait = min(60, 2 ** i)
             print(f"  retry {i+1}/{retries} in {wait}s (HTTP {e.code}, pace={PACE[0]:.1f}s)",
                   file=sys.stderr)
@@ -105,6 +114,8 @@ def main():
     ap.add_argument("--out", required=True)
     ap.add_argument("--email", default="")
     args = ap.parse_args()
+    if args.email:
+        UA[0] += f" mailto:{args.email}"
 
     records = [json.loads(l) for l in open(args.inp, encoding="utf-8")]
 
