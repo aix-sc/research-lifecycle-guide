@@ -30,23 +30,38 @@ import urllib.request
 API = "https://api.openalex.org/works"
 BATCH = 50
 PACE = [0.4]  # seconds between API calls; adapts upward on 429
-UA = ["paper-structure-analyzer/1.1 (https://github.com/aix-sc/research-lifecycle-guide)"]
+
+def _headers():
+    """OpenAlex auth (Feb-2026 policy): free key = 10x daily budget. Never hardcode."""
+    h = {"User-Agent": "paper-structure-analyzer/1.2 (https://github.com/aix-sc/research-lifecycle-guide)"}
+    k = os.environ.get("OPENALEX_KEY")
+    if k:
+        h["Authorization"] = "Bearer " + k
+    return h
+
+
+def _credits_exhausted(e):
+    rem = e.headers.get("X-RateLimit-Remaining") if e.headers else None
+    return rem is not None and str(rem).strip().lstrip("-").isdigit() and int(rem) <= 0
+
 
 
 def get(url, retries=8):
     consecutive_429 = 0
     for i in range(retries):
         try:
-            req = urllib.request.Request(url, headers={"User-Agent": UA[0]})
+            req = urllib.request.Request(url, headers=_headers())
             with urllib.request.urlopen(req, timeout=60) as r:
                 return json.load(r)
         except urllib.error.HTTPError as e:
             if e.code == 429:
+                if _credits_exhausted(e):
+                    print("❌ OpenAlex 日次クレジット枯渇（UTC 0:00 リセット）。OPENALEX_KEY を設定するか明日再実行。"
+                          "チェックポイントは保存済み。", file=sys.stderr)
+                    raise SystemExit(3)
                 consecutive_429 += 1
                 ra = e.headers.get("Retry-After") if e.headers else None
                 server_wait = int(ra) if (ra and str(ra).isdigit()) else 0
-                # OpenAlex may send time-until-quota-reset (hours!) — never trust
-                # Retry-After beyond a hard 120s cap.
                 wait = min(120, server_wait) if server_wait else min(120, 15 * consecutive_429)
                 wait = max(wait, 10)
                 PACE[0] = min(3.0, PACE[0] + 0.4)
@@ -114,9 +129,6 @@ def main():
     ap.add_argument("--out", required=True)
     ap.add_argument("--email", default="")
     args = ap.parse_args()
-    if args.email:
-        UA[0] += f" mailto:{args.email}"
-
     records = [json.loads(l) for l in open(args.inp, encoding="utf-8")]
 
     done_lines = valid_lines(args.out)

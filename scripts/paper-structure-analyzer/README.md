@@ -10,6 +10,16 @@ A reproducible pipeline that stratifies papers from top venues into citation-per
 - ネットワーク（OpenAlex API, キー不要 / no API key）
 - （任意 / optional）GROBID server for Step 5: `docker run -p 8070:8070 lfoppiano/grobid`
 
+## Authentication（OpenAlex 2026-02〜 のAPIキー制）
+
+OpenAlex は API キー必須・日次クレジット制になった（キーあり $1/日 相当＝キーなしの10倍）。**無料キーを https://openalex.org/settings/api で取得し、環境変数で渡す**（コード・git には絶対に入れない）：
+
+```bash
+read -s "?OpenAlex API key: " OPENALEX_KEY && export OPENALEX_KEY   # zsh; 履歴に残さない
+```
+
+各スクリプトは `Authorization: Bearer` ヘッダで送信する。429 で `X-RateLimit-Remaining: 0` を受けた場合は日次クレジット枯渇（UTC 0:00 リセット）と判定して**即停止**（チェックポイントは保持、翌日再実行で続きから）。学術利用は support@openalex.org へ相談すると上限を無償で引き上げてもらえる。
+
 ## Pipeline
 
 ```bash

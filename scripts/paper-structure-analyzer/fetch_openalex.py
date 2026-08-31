@@ -24,6 +24,8 @@ Recent 2 years are excluded automatically (unstable citation windows).
 """
 import argparse
 import json
+import urllib.error
+import os
 import sys
 import time
 import datetime
@@ -31,18 +33,53 @@ import urllib.parse
 import urllib.request
 
 API = "https://api.openalex.org/works"
+PACE = [0.4]
+
+def _headers():
+    """OpenAlex auth (Feb-2026 policy): free key = 10x daily budget. Never hardcode."""
+    h = {"User-Agent": "paper-structure-analyzer/1.2 (https://github.com/aix-sc/research-lifecycle-guide)"}
+    k = os.environ.get("OPENALEX_KEY")
+    if k:
+        h["Authorization"] = "Bearer " + k
+    return h
 
 
-def get(url: str, retries: int = 5) -> dict:
+def _credits_exhausted(e):
+    rem = e.headers.get("X-RateLimit-Remaining") if e.headers else None
+    return rem is not None and str(rem).strip().lstrip("-").isdigit() and int(rem) <= 0
+
+
+
+def get(url, retries=8):
+    consecutive_429 = 0
     for i in range(retries):
         try:
-            with urllib.request.urlopen(url, timeout=60) as r:
+            req = urllib.request.Request(url, headers=_headers())
+            with urllib.request.urlopen(req, timeout=60) as r:
                 return json.load(r)
-        except Exception as e:  # noqa: BLE001 — retry on any transport error
-            wait = 2 ** i
-            print(f"  retry {i+1}/{retries} after {wait}s ({e})", file=sys.stderr)
+        except urllib.error.HTTPError as e:
+            if e.code == 429:
+                if _credits_exhausted(e):
+                    print("❌ OpenAlex 日次クレジット枯渇（UTC 0:00 リセット）。OPENALEX_KEY を設定するか明日再実行。"
+                          "チェックポイントは保存済み。", file=sys.stderr)
+                    raise SystemExit(3)
+                consecutive_429 += 1
+                ra = e.headers.get("Retry-After") if e.headers else None
+                server_wait = int(ra) if (ra and str(ra).isdigit()) else 0
+                wait = min(120, server_wait) if server_wait else min(120, 15 * consecutive_429)
+                wait = max(wait, 10)
+                PACE[0] = min(3.0, PACE[0] + 0.4)
+            else:
+                consecutive_429 = 0
+                wait = min(60, 2 ** i)
+            print(f"  retry {i+1}/{retries} in {wait}s (HTTP {e.code}, pace={PACE[0]:.1f}s)",
+                  file=sys.stderr)
             time.sleep(wait)
-    raise RuntimeError(f"failed after {retries} retries: {url}")
+        except Exception as e:  # noqa: BLE001 — transport errors
+            wait = min(60, 2 ** i)
+            print(f"  retry {i+1}/{retries} in {wait}s ({e})", file=sys.stderr)
+            time.sleep(wait)
+    raise RuntimeError(url)
 
 
 def fetch_cohort(venue: str, year: int, per_year: int, email: str):
