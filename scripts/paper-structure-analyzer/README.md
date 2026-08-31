@@ -46,7 +46,11 @@ python author_venues.py --in data/features.jsonl --out-dir results/ \
     --email you@example.org
 #    → results/venue_strategy_T10_vs_B.md
 
-# 7.（任意）OA本文PDFがある場合のみ: 章見出しラベル分布
+# 7. AI執筆可能性（excess vocabulary・オフライン・集団推定のみ）
+python ai_markers.py --in data/features.jsonl --out-dir results/
+#    → results/ai_markers.md
+
+# 8.（任意）OA本文PDFがある場合のみ: 章見出しラベル分布
 python grobid_sections.py --pdf-dir pdfs/ --works data/features.jsonl \
     --out data/sections.jsonl
 ```
@@ -80,3 +84,4 @@ python grobid_sections.py --pdf-dir pdfs/ --works data/features.jsonl \
 | v1 | 2026-07-23 | 初版（fetch / enrich / extract / analyze / grobid の5ステップ） |
 | v2 | 2026-07-23 | タイトル一般性・特定性特徴6種（for／application／country／前置詞密度 等）と、層×特定性の媒介チェックを analyze.py のレポートに追加 |
 | v3 | 2026-07-23 | author_venues.py（著者venue戦略：多様性/ロイヤルティ・journal比・venue h-index・preprint率の層間比較）を追加。fetch_openalex.py が first/last author ID を記録 |
+| v4 | 2026-08-31 | Python 3.9 互換・enrich の再開チェックポイント・Retry-After 120s キャップ・OPENALEX_KEY（Bearer）認証・クレジット枯渇即停止・ai_markers.py（LLM スタイル語の年次×層集計）を追加。E1 実測完了（docs §E1） |

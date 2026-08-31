@@ -1,6 +1,6 @@
 # Paper Anatomy — Structural Patterns of Highly Cited Papers (Evidence Synthesis)
 
-**Research Lifecycle Guide supplement | v3 (2026-07-23)**
+**Research Lifecycle Guide supplement | v4 (2026-08-31)**
 Skill delta: `paper-compiler/references/paper-anatomist.md` · Pipeline: `scripts/paper-structure-analyzer/`
 Full version: [PaperAnatomy_HighCitation_Patterns_JA.md](PaperAnatomy_HighCitation_Patterns_JA.md) (Japanese)
 
@@ -34,6 +34,20 @@ Reference count correlates positively with citations across many large studies. 
 
 Beyond single-paper form, v3 adds the AUTHOR's venue portfolio as a stratified object of analysis. Prior work covers venue-selection criteria and journal diversity of early-career researchers; general-audience journals carry a readership advantage (mirroring the generality hypothesis); and authors publishing mainly in low-impact venues concentrate in dense, inward-looking citation cliques — venue choice shapes citation ecology, not just exposure. Journal-level metrics must not proxy single-paper quality, so venue h-index is used only as a portfolio descriptor. New `author_venues.py` compares first authors of T10 vs B papers on venue diversity vs loyalty, journal/conference mix, median & max venue h-index (flagship reach), and preprint share — testing whether a "flagship journal × rapid venue × preprint" division is identifiable among highly cited papers' authors (RQ4/E6). Main confound: career length (`au_n_works` always reported alongside).
 
+## E1. Pilot measurements (2026-08-31) — venue-measured override
+
+**Data:** OpenAlex, TKDE / PVLDB / DMKD, 2018–2023, top-200 by citations per venue-year (DMKD: all 53–91) = 2,814 papers; tiers within venue-year: T1=30, **T10=252, M=564, B=705**. Mann–Whitney + Cliff's δ. **go/no-go: GO** (5 features with |δ|≥0.147).
+
+- **Only reference-list features separate tiers:** Price index 0.571 vs 0.468 (δ=0.317), reference count 45.5 vs 37 (0.309), median citations of cited works 208 vs 146 (0.300), median reference year 2016 vs 2014.5 (0.237). The ecology-study pattern replicates fully in DS/DB; "70% within 5 years" is reached only in the upper half of T10 — the ≥0.6 / ideal 0.7 prescription holds.
+- **Titles and abstracts are inert within a venue:** median title length 8 words in both tiers; colon/question/specificity markers, abstract length, readability (Flesch 23.2 vs 23.3) and move cues all negligible. Specific titles are nearly absent at top venues (243/252 and 690/705 generic), so the generality hypothesis operates *between* venue tiers, not within one. Venue norms homogenize abstracts.
+- **Author venue strategy (RQ4) is null:** first authors of T10 vs B papers are indistinguishable on works, venue diversity, loyalty, venue h-index reach and preprint share.
+- Author count 5 vs 4 (δ=0.19) — team-size confound, to be controlled in E2.
+- **Takeaway:** once a paper is in a top venue, what it cites decides whether it gets cited; title and abstract are the entry ticket, not bonus points.
+
+## 7bis. LLM-assisted writing (excess vocabulary, v4)
+
+Following Kobak et al. (2025, *Sci. Adv.*) — population-level only, no per-paper labeling (individual detectors are unreliable and biased against non-native writers, Liang et al. 2023). Share of abstracts with ≥1 HIGH style marker (delve, intricate, pivotal, showcase, underscore, …): 3.7% baseline (2018–2022) → **6.8% in 2023 (+3.2 pt, 1.97×)**, a lower bound of ~3% LLM-assisted abstracts, consistent with the small 2023 step and 2024 surge seen in PubMed. The BROAD set (crucial, comprehensive, robust, …) already rose from 2021 and is unusable as evidence. No tier difference (δ=−0.025). Implementation: `ai_markers.py`; E2 adds 2024–2025.
+
 ## 6. What stratification newly reveals
 
 (i) Form explains least at T1 (content/topicality dominate) — the coachable transition is B/M → T10. (ii) Some features flip sign between within-journal and between-journal comparisons — always stratify within venue-year. (iii) Readability paradox: no causal evidence for obfuscation; norm fixed as "dense terminology, plain syntax". (iv) Standard confounds: author count, internationality, OA, topicality — record author count & document type minimally. (v) Maintain the field-flip list and override guidance with venue measurements via the pipeline.
@@ -53,3 +67,4 @@ Letchford et al. 2015 (https://ncbi.nlm.nih.gov/pmc/articles/PMC4555861) · Sien
 | v1 | 2026-07-23 | First release: evidence synthesis + stratified protocol + pipeline design + skill delta |
 | v2 | 2026-07-23 | Added the title-generality hypothesis (§2bis-equivalent), six specificity features and a mediation check in the pipeline, two new sources |
 | v3 | 2026-07-23 | Added author venue-strategy analysis (§5bis): author_venues.py compares first-author venue portfolios across tiers; fetch now records first/last author IDs |
+| v4 | 2026-08-31 | Added E1 pilot measurements (2,814 papers, GO) overriding the guide's defaults, and §7bis LLM-assisted writing analysis (ai_markers.py) |

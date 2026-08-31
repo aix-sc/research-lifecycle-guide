@@ -42,3 +42,5 @@ node_modules/
 # Python
 __pycache__/
 *.pyc
+scripts/paper-structure-analyzer/data/
+scripts/paper-structure-analyzer/results/
