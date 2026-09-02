@@ -303,3 +303,21 @@ v0雛形が無くても必ず起動する。素材から読み取れる情報は
 3b. **見出しを Heading 1 / Heading 2 スタイルで作らないのは違反**（太字の通常段落で代用しない）。目次が自動生成できなくなる。
 3c. **既存DOCXを改稿するとき、手順0の「既存文書の正規化」を実行しないのは違反**。前版の体裁（番号付き見出し・旧セクション構成）をそのまま引き継いで出力してはならない。
 4. 空きスロットが多いときも、確認質問は1回にまとめる。
+
+## AI 文体チェック（英語テキスト向け・review 時の追加ゲート）
+
+EN 版プロポーザル・英文アブスト・英語の研究概要を review するときは、paper-compiler の `references/ai-style-auditor.md`（文体鑑識官）と同じ基準で **AI 文体ゲート**を併走させる（❌/⚠️ には置換下書きを添える本則に従う）。要点のみ再掲：
+
+- **HIGH 語彙（検出したら置換）**：delve / intricate / meticulous / pivotal / realm / showcase / underscore / commendable / noteworthy / multifaceted / nuanced / groundbreaking / transformative / seamless / tapestry / testament / garner / unveil / leverage / harness / foster / elucidate / ever-evolving
+- **定型句（削除）**：It is worth noting that… ／ plays a pivotal role in… ／ In today's fast-paced world… ／ This underscores the importance of… ／ In conclusion, … paves the way for…
+- **構造**：段落頭の Moreover/Furthermore ローテーション、数値なしの significantly、三点並列の乱発、新情報ゼロの総括文は書き換え。強調は数値で。
+- **判定**：本文 1,000 語あたり HIGH ≥2 で ⚠️（置換下書き必須）。日本語本文は参考チェックのみ（「〜を掘り下げる」「極めて重要な役割」「多面的な」等の直訳癖）。著者の AI 利用は断定しない。
+- 根拠と全文：paper-compiler `references/ai-style-auditor.md`（Kobak+2025・Liang+2023/24・E1 実測 2023 年 1.97 倍）。
+
+## 更新履歴（スキル自体）
+
+| v | 日付 | 変更 |
+|---|---|---|
+| v1 | 2026-07 | 初版（固定目次スロット行列・write/review 収束ループ・既存文書の正規化） |
+| v1.1 | 2026-07-23 | 見出しスタイル（Heading 1/2・目次自動生成）規則、スケジュール概要の新設、更新履歴の末尾移動規則 |
+| v1.2 | 2026-08-31 | AI 文体チェック（英語テキスト向けゲート）を review に追加（文体鑑識官 ai-style-auditor と同基準） |
